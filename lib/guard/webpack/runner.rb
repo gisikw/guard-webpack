@@ -53,10 +53,13 @@ module Guard
 
       def run_webpack
         begin
-          system("#{webpack_bin} --watch #{option_flags}")
+          pid = fork{ exec("#{webpack_bin} --watch #{option_flags}") }
+          Process.wait(pid)
         rescue
           # TODO: Be more discerning.
           ::Guard::UI.error "Webpack unable to start (are you sure it's installed?)"
+        ensure
+          Process.kill('TERM',pid)
         end
       end
 
