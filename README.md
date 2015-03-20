@@ -43,6 +43,10 @@ colors: true          # use colors in displaying webpack output, default: true
 progress: true        # display a progress bar for long compiles, default: true
 ```
 
+## Notes on Guard 1.x
+
+Guard::Webpack strives to support older versions of Guard (including the `Guard::Guard`, rather than `Guard::Plugin` syntax. However, support may be limited. Options, as specified above, are not supported for versions of Guard below 2.0.
+
 ## Contributing
 
 1. Fork it ( https://github.com/gisikw/guard-webpack/fork )

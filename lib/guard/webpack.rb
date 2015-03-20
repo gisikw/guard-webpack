@@ -1,8 +1,7 @@
-require 'guard/webpack/version'
-require 'guard/webpack/runner'
-
 module Guard
-  class Webpack < Guard::Plugin
+  class Webpack < ::Guard.const_get(::Guard.const_defined?(:Plugin) ? :Plugin : :Guard)
+    require 'guard/webpack/version'
+    require 'guard/webpack/runner'
 
     DEFAULT_OPTIONS = {
       progress: true,
@@ -11,10 +10,11 @@ module Guard
 
     attr_accessor :runner
 
-    def initialize(options = {})
-      with_defaults(options) do |opts|
+    def initialize(*args)
+      with_defaults(args[-1]) do |opts|
         super(opts)
         @runner = Runner.new(opts)
+        @runner.start
       end
     end
 
