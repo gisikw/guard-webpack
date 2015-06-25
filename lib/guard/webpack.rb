@@ -20,7 +20,7 @@ module Guard
 
     def run_on_modifications(p);  @runner.restart;  end
     def run_all;                  @runner.restart;  end
-    def reload;                   @runner.retart;   end
+    def reload;                   @runner.restart;  end
     def start;                    @runner.start;    end
     def stop;                     @runner.stop;     end
 
