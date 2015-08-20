@@ -43,6 +43,7 @@ class Guard::Webpack::Runner
 
   def option_flags
     output = ""
+    output += " -d"         if @options[:d]
     output += " --colors"   if @options[:colors]
     output += " --progress" if @options[:progress]
     output

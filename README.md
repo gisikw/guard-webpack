@@ -39,6 +39,7 @@ guard :webpack, colors: false
 ### List of available options
 
 ```ruby
+d: false              # development mode turns on debug mode, source maps, and path info, default: false
 colors: true          # use colors in displaying webpack output, default: true
 progress: true        # display a progress bar for long compiles, default: true
 ```

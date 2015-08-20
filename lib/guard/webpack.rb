@@ -4,6 +4,7 @@ module Guard
     require 'guard/webpack/runner'
 
     DEFAULT_OPTIONS = {
+      d:        false,
       progress: true,
       colors:   true
     }
