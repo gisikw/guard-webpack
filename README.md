@@ -31,7 +31,7 @@ At present, Guard::Webpack assumes you already have Webpack configured via a `we
 You can, however, add additional options to your Guardfile, as seen below:
 
 ```ruby
-guard :webpack, colors: false
+guard :webpack, colors: false, config: './config/webpack/development.config.js'
 ```
 
 ## Options
@@ -39,8 +39,9 @@ guard :webpack, colors: false
 ### List of available options
 
 ```ruby
-colors: true          # use colors in displaying webpack output, default: true
-progress: true        # display a progress bar for long compiles, default: true
+colors: true             # use colors in displaying webpack output, default: true
+progress: true           # display a progress bar for long compiles, default: true
+config: 'path_to_config' # define an alternate config file
 ```
 
 ## Notes on Guard 1.x
