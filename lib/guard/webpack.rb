@@ -14,7 +14,6 @@ module Guard
       with_defaults(args[-1]) do |opts|
         super(opts)
         @runner = Runner.new(opts)
-        @runner.start
       end
     end
 
