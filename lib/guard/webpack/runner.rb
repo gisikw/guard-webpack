@@ -47,6 +47,7 @@ class Guard::Webpack::Runner
     output += " --colors"   if @options[:colors]
     output += " --progress" if @options[:progress]
     output += " --config #{@options[:config]}" if @options[:config]
+    output += " --mode #{@options[:mode]}" if @options[:mode]
     output
   end
 
