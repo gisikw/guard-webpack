@@ -23,8 +23,13 @@ class Guard::Webpack::Runner
 
   private
 
+  def bin_webpack
+    bin = File.join(Dir.pwd, 'bin', 'webpack')
+    File.exists?(bin) && bin
+  end
+
   def local_webpack
-    bin = File.join(Dir.pwd,'node_modules/webpack/bin/webpack.js')
+    bin = File.join(Dir.pwd, %w[node_modules webpack bin webpack.js])
     File.exists?(bin) && bin
   end
 
@@ -38,7 +43,7 @@ class Guard::Webpack::Runner
   end
 
   def webpack_bin
-    local_webpack || global_webpack || no_webpack
+    bin_webpack || local_webpack || global_webpack || no_webpack
   end
 
   def option_flags
